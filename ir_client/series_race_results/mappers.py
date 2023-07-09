@@ -1,5 +1,5 @@
 from typing import List
-from istats3.utils.collections import defaultordereddict
+from ir_client.utils.collections import defaultordereddict #TODO extract different lib
 from more_itertools import unique_everseen
 
 from ir_client.exceptions import MappingException
