@@ -1,14 +1,16 @@
-from pydantic import BaseModel, Field
+from dataclasses import dataclass, field
 from datetime import datetime
 
-
-class SeriesRaceResult(BaseModel):
+@dataclass
+class SeriesRaceResult:
     subsession_id: int
 
 
-class SeriesRaceResultsSlot(BaseModel):
-    results: list[SeriesRaceResult] = Field(default_factory=list)
+@dataclass
+class SeriesRaceResultsSlot:
+    results: list[SeriesRaceResult] = field(default_factory=lambda: [])
 
 
-class SeriesRaceResultCollection(BaseModel):
+@dataclass
+class SeriesRaceResultCollection:
     slots: dict[datetime, SeriesRaceResultsSlot]

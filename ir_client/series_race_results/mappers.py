@@ -1,6 +1,7 @@
 from typing import List
 from ir_client.utils.collections import defaultordereddict #TODO extract different lib
 from more_itertools import unique_everseen
+from datetime import datetime, timezone
 
 from ir_client.exceptions import MappingException
 from ir_client.series_race_results.models import (
@@ -16,7 +17,8 @@ def map_series_race_results(data) -> SeriesRaceResultCollection:
         races = _get_races(data, headers)
         for race in races:
             start_time = race[headers["start_time"]]
-            slots[start_time].results.append(_map_single_race(race, headers))
+            dt_start_time = datetime.fromtimestamp(start_time / 1e3, tz=timezone.utc)
+            slots[dt_start_time].results.append(_map_single_race(race, headers))
         return SeriesRaceResultCollection(slots=slots)
     except KeyError:
         raise InvalidSeriesRaceResultsDataException()

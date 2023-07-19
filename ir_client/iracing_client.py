@@ -1,5 +1,4 @@
 from json import JSONDecodeError
-from starlette import status
 
 import requests
 
@@ -34,6 +33,6 @@ class IracingClient:
             raise InvalidDataException(endpoint_type_cls, endpoint_parameters, results.text) from e
     
     def _has_authorization_failed(self, response: requests.Response):
-        return response.status_code == status.HTTP_302_FOUND and (
+        return response.status_code == 302 and (
             "login.jsp" in response.headers['Location'] or "notauthed.jsp" in response.headers['Location']
         )

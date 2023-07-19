@@ -2,7 +2,7 @@ from collections import OrderedDict
 
 
 def defaultordereddict(default_factory):
-    return DefaultOrderedDict(default_factory)
+    return DefaultOrderedDict(default_factory=default_factory)
 
 
 class DefaultOrderedDict(OrderedDict):
