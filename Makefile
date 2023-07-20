@@ -1,7 +1,7 @@
 POETRY := poetry run
 
 init:
-	poetry install
+	poetry install --no-interaction
 
 test:
 	$(POETRY) pytest tests --junitxml=.build/reports/test-report.xml
