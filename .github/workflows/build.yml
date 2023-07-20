@@ -42,6 +42,6 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          check_name: "Test Results (Python ${{ matrix.python-version }})"
+          check_name: "Test Results (${{ matrix.python-version }})"
           files: |
             .build/reports/**/*.xml
