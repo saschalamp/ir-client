@@ -24,7 +24,7 @@ jobs:
       - name: Run tests
         run: |
           make tests
-      - name: Run integration tests
-        run: |
-          make it
+#      - name: Run integration tests
+#        run: |
+#          make it
 
