@@ -1,4 +1,4 @@
-name: Python tests
+name: Python build
 
 on: [push]
 
@@ -30,7 +30,7 @@ jobs:
           make init
       - name: Run tests
         run: |
-          make tests
+          make test
 #      - name: Run integration tests
 #        run: |
 #          make it
