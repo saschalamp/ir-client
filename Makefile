@@ -3,9 +3,7 @@ POETRY := poetry run
 init:
 	poetry install --no-interaction
 
-release:
-	poetry build
-	poetry publish
+bump-version:
 	poetry version patch
 	git add .
 	git commit -m "Prepare for next iteration"

@@ -25,13 +25,14 @@ jobs:
         uses: snok/install-poetry@v1
         with:
           virtualenvs-in-project: true
+      - name: Build and publish to PyPI
+        uses: JRubics/poetry-publish@v1.17
+        with:
+          pypi_token: ${{ secrets.PYPI_TOKEN }}
       - name: Set Git user config
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - name: Install dependencies
+      - name: Poetry bump version
         run: |
-          make init
-      - name: Release to PyPI
-        run: |
-          make release
+          make bump-version
