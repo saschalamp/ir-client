@@ -26,13 +26,19 @@ jobs:
         with:
           virtualenvs-in-project: true
       - name: Build and publish to PyPI
-        uses: JRubics/poetry-publish@v1.17
-        with:
-          pypi_token: ${{ secrets.PYPI_TOKEN }}
+        run: |
+          poetry build
+          poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+          poetry publish --no-interaction
       - name: Set Git user config
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - name: Poetry bump version
         run: |
-          make bump-version
+          poetry version patch
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: Prepare for next iteration
+          committer_name: GitHub Actions
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
