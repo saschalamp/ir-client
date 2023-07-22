@@ -4,6 +4,7 @@ init:
 	poetry install --no-interaction
 
 release:
+	poetry build
 	poetry publish
 	poetry version patch
 	git add .
