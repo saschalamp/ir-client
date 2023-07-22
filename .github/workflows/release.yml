@@ -25,6 +25,10 @@ jobs:
         uses: snok/install-poetry@v1
         with:
           virtualenvs-in-project: true
+      - name: Set Git user config
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - name: Install dependencies
         run: |
           make init
