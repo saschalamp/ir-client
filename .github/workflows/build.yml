@@ -2,7 +2,8 @@ name: Python build
 
 on:
   push:
-    branches
+    branches:
+      - "*"
 
 permissions:
   checks: write
