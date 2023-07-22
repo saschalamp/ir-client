@@ -13,7 +13,7 @@ jobs:
       - name: Set up Python 3.10
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10
+          python-version: "3.10"
       - name: Load cached Poetry installation
         id: cached-poetry
         uses: actions/cache@v3
@@ -31,13 +31,3 @@ jobs:
       - name: Release to PyPI
         run: |
           make release
-      - name: Create Github release
-        id: create_release
-        uses: actions/create-release@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
