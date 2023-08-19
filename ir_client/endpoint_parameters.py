@@ -6,6 +6,12 @@ from dataclasses import dataclass
 # TODO         self.key = key
 
 
+class EmptyParameters:
+    # TODO find a way to generate this automatically
+    def as_dict(self):
+        return None
+
+
 @dataclass
 class GetSubsessionResultsParameters:
     subsession_id: int

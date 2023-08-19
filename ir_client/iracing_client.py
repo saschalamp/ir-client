@@ -28,9 +28,9 @@ class IracingClient:
             raise AuthorizationFailedException()
 
         try:
-            return endpoint_type.map_data(results.json())
+            return endpoint_type.map_data(results)
         except (JSONDecodeError, MappingException) as e:
-            raise InvalidDataException(endpoint_type_cls, endpoint_parameters, results.text) from e
+            raise InvalidDataException(endpoint_type_cls, endpoint_parameters, results.text[:1000]) from e
     
     def _has_authorization_failed(self, response: requests.Response):
         return response.status_code == 302 and (
