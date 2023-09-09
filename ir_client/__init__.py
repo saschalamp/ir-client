@@ -32,4 +32,9 @@ from .endpoint_types import GetSeriesRaceResults
 from .cars.models import Car, Cars
 from .subsession_results.models import SimSession, SimSessionType
 from .laps.models import LapEvent, Lap
-from .series_race_results.models import SeriesRaceResult
+from .series_race_results.models import (
+    SeriesRaceResultCollection,
+    SeriesRaceResultsSlot,
+    SeriesRaceResult,
+    SeriesRaceClassResult
+)
