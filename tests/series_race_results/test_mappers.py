@@ -87,10 +87,12 @@ def test_map_some_results():
             split=1,
             classes={
                 1: SeriesRaceClassResult(
+                    car_class_id=1,
                     field_size=22,
                     strength_of_field=8645
                 ),
                 2: SeriesRaceClassResult(
+                    car_class_id=2,
                     field_size=20,
                     strength_of_field=1936
                 ),
@@ -102,6 +104,7 @@ def test_map_some_results():
             split=2,
             classes={
                 1: SeriesRaceClassResult(
+                    car_class_id=1,
                     field_size=16,
                     strength_of_field=4582
                 ),
@@ -113,6 +116,7 @@ def test_map_some_results():
             split=3,
             classes={
                 1: SeriesRaceClassResult(
+                    car_class_id=1,
                     field_size=11,
                     strength_of_field=8557
                 ),
@@ -129,6 +133,7 @@ def test_map_some_results():
             split=1,
             classes={
                 1: SeriesRaceClassResult(
+                    car_class_id=1,
                     field_size=12,
                     strength_of_field=8567
                 ),

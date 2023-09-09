@@ -3,6 +3,7 @@ from datetime import datetime
 
 @dataclass
 class SeriesRaceClassResult:
+    car_class_id: int
     field_size: int
     strength_of_field: int
 
