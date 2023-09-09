@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ir-client"
-version = "0.1.6"
+version = "0.1.7"
 description = "Library to access the iRacing web API"
 authors = ["Sascha Lamp <sascha@lamp-online.de>"]
 license = "MIT License"
